@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGenie - Google Gemini Powered Learning Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <div class="brand">
+            <div class="brand-icon">E</div>
+            <div>
+                <h1>EduGenie</h1>
+                <p>Google Gemini Powered Learning Assistant</p>
+            </div>
+        </div>
+        <div class="status"><span class="status-dot"></span> AI Ready</div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h2>Learn Smarter with <span>EduGenie</span></h2>
+        <p>Ask questions, understand topics, create quizzes, summarize notes, and build a learning path using AI.</p>
+    </section>
+
+    <section class="ai-grid">
+        <div class="card">
+            <div class="card-icon">?</div>
+            <h3>AI Tutor</h3>
+            <p class="card-description">Ask any educational question.</p>
+            <div class="form-group">
+                <label for="question">Question</label>
+                <textarea id="question" placeholder="Enter your question..."></textarea>
+            </div>
+            <button class="primary-btn" onclick="askQuestion()">Ask EduGenie</button>
+            <div id="qna-result" class="result-box"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">E</div>
+            <h3>Explain Topic</h3>
+            <p class="card-description">Get a step-by-step explanation.</p>
+            <div class="form-group">
+                <label for="topic">Topic</label>
+                <input id="topic" type="text" placeholder="e.g. B+ Tree">
+            </div>
+            <div class="form-group">
+                <label for="level">Level</label>
+                <select id="level">
+                    <option>School</option>
+                    <option selected>College</option>
+                    <option>Beginner</option>
+                    <option>Advanced</option>
+                </select>
+            </div>
+            <button class="primary-btn" onclick="explainTopic()">Explain Topic</button>
+            <div id="explain-result" class="result-box"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">Q</div>
+            <h3>Generate Quiz</h3>
+            <p class="card-description">Create multiple-choice practice questions.</p>
+            <div class="form-group">
+                <label for="quiz-topic">Topic</label>
+                <input id="quiz-topic" type="text" placeholder="e.g. Computer Networks">
+            </div>
+            <div class="form-group">
+                <label for="quiz-count">Number of Questions</label>
+                <input id="quiz-count" type="number" min="1" max="20" value="5">
+            </div>
+            <button class="primary-btn" onclick="generateQuiz()">Generate Quiz</button>
+            <div id="quiz-result" class="result-box"></div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">S</div>
+            <h3>Summarize Notes</h3>
+            <p class="card-description">Turn long notes into quick revision material.</p>
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                <textarea id="notes" placeholder="Paste your study notes..."></textarea>
+            </div>
+            <button class="primary-btn" onclick="summarizeNotes()">Summarize Notes</button>
+            <div id="summary-result" class="result-box"></div>
+        </div>
+
+        <div class="card card-full">
+            <div class="card-icon">L</div>
+            <h3>Learning Path</h3>
+            <p class="card-description">Create a day-by-day study plan.</p>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="learning-subject">Subject</label>
+                    <input id="learning-subject" type="text" placeholder="e.g. Data Structures">
+                </div>
+                <div class="form-group">
+                    <label for="learning-goal">Goal</label>
+                    <input id="learning-goal" type="text" value="Exam preparation">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="learning-days">Number of Days</label>
+                <input id="learning-days" type="number" min="1" max="30" value="7">
+            </div>
+            <button class="primary-btn" onclick="createLearningPath()">Create Learning Path</button>
+            <div id="learning-result" class="result-box"></div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p><strong>EduGenie</strong> &mdash; Google Gemini Powered Learning Assistant</p>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
